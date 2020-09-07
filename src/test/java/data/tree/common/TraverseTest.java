@@ -14,11 +14,17 @@ public class TraverseTest {
     public void testInOrderRecur() {
         TreeNode root = buildTree();
         Traverse.inOrderRecur(root);
+        System.out.println("==============");
+        root = buildTree2();
+        Traverse.inOrderRecur(root);
     }
 
     @Test
     public void testPostOrderRecur() {
         TreeNode root = buildTree();
+        Traverse.postOrderRecur(root);
+        System.out.println("==============");
+        root = buildTree2();
         Traverse.postOrderRecur(root);
     }
 
@@ -26,11 +32,17 @@ public class TraverseTest {
     public void testPreOrder() {
         TreeNode root = buildTree();
         Traverse.preOrder(root);
+        System.out.println("==============");
+        root = buildTree2();
+        Traverse.preOrder(root);
     }
 
     @Test
     public void testInOrder() {
         TreeNode root = buildTree();
+        Traverse.inOrder(root);
+        System.out.println("==============");
+        root = buildTree2();
         Traverse.inOrder(root);
     }
 
@@ -38,11 +50,18 @@ public class TraverseTest {
     public void testPostOrder() {
         TreeNode root = buildTree();
         Traverse.postOrder(root);
+        System.out.println("==============");
+        root = buildTree2();
+        Traverse.postOrder(root);
+
     }
 
     @Test
     public void testLevelOrder() {
         TreeNode root = buildTree();
+        Traverse.levelOrder(root);
+        System.out.println("==============");
+        root = buildTree2();
         Traverse.levelOrder(root);
     }
 
@@ -97,7 +116,7 @@ public class TraverseTest {
         node2.left = node4;
         node3.right = node5;
         node4.left = node6;
-        node4.right = node7;
+        node5.right = node7;
         return root;
     }
 }

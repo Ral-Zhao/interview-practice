@@ -5,10 +5,10 @@ public class TreeNode {
     public TreeNode left;
     public TreeNode right;
 
-    TreeNode(int value) {
+    public TreeNode(int value) {
         this.value = value;
     }
 
-    TreeNode() {
+    public TreeNode() {
     }
 }
