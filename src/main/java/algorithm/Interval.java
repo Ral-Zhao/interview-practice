@@ -49,13 +49,39 @@ public class Interval {
         for (int i = 1; i < interval.length; i++) {
             if (interval[i][0] <= end) {
                 end = interval[i][1] > end ? interval[i][1] : end;
-            }else {
-                result.add(new int[]{start,end});
+            } else {
+                result.add(new int[]{start, end});
                 start = interval[i][0];
                 end = interval[i][1];
             }
         }
-        result.add(new int[]{start,end});
+        result.add(new int[]{start, end});
+        return result;
+    }
+
+    /**
+     * 给定两个已排序的区间A,B，返回两个区间的交集
+     */
+    public static List<int[]> intersection(int[][] intervalA, int[][] intervalB) {
+        int i = 0;
+        int j = 0;
+        List<int[]> result = new ArrayList<>();
+        while (i < intervalA.length && j < intervalB.length) {
+            int startA = intervalA[i][0];
+            int endA = intervalA[i][1];
+            int startB = intervalB[j][0];
+            int endB = intervalB[j][1];
+            if (endB >= startA && endA >= startB) {
+                int start = Math.max(startA, startB);
+                int end = Math.min(endA, endB);
+                result.add(new int[]{start, end});
+            }
+            if (endB<endA){
+                j++;
+            }else {
+                i++;
+            }
+        }
         return result;
     }
 

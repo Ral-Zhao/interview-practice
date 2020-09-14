@@ -16,4 +16,12 @@ public class IntervalTest {
         int[][] interval = new int[][]{{1,3},{6,9},{4,5},{1,2},{4,6}};
         System.out.println(JSON.toJSONString(Interval.mergeInterval(interval)));
     }
+
+    @Test
+    public void testIntersection(){
+        int[][] intervalA = new int[][]{{1,5},{6,8},{10,11}};
+        int[][] intervalB = new int[][]{{1,2},{3,4},{7,9},{11,12}};
+
+        System.out.println(JSON.toJSONString(Interval.intersection(intervalA,intervalB)));
+    }
 }
