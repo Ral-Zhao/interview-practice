@@ -47,6 +47,7 @@ public class DuplicationInArray {
     public static int duplicate2(int[] nums) {
         int start = 0;
         int end = nums.length - 1;
+        //类似二分查找的思想，在一个范围内，如果没有重复数字，则区间大小应等于处于该区间内元素的数量。
         while (start <= end) {
             int mid = (end - start) / 2 + start;
             int count = countNumber(nums, start + 1, mid + 1);
