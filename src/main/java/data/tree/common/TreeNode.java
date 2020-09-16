@@ -2,6 +2,7 @@ package data.tree.common;
 
 public class TreeNode {
     public int value;
+    public TreeNode parent;
     public TreeNode left;
     public TreeNode right;
 
