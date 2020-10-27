@@ -1,5 +1,7 @@
 package questions.offer;
 
+import questions.common.ListNode;
+
 /**
  *  题目18-2 删除链表中的重复节点
  *
@@ -7,21 +9,21 @@ package questions.offer;
  */
 public class DeleteDuplicatedNode {
 
-    public static Node deleteDuplicatedNode(Node head) {
+    public static ListNode deleteDuplicatedNode(ListNode head) {
         if (head == null) {
             return null;
         }
-        Node sp = new Node(-1);
+        ListNode sp = new ListNode(-1);
         sp.next = head;
-        Node pre = sp;
+        ListNode pre = sp;
 
         while (pre.next != null) {
-            Node cur = pre.next;
-            if (cur.next != null && cur.next.val == cur.val) {
-                while (cur.next != null && cur.next.val == cur.val) {
+            ListNode cur = pre.next;
+            if (cur.next != null && cur.next.value == cur.value) {
+                while (cur.next != null && cur.next.value == cur.value) {
                     cur = cur.next;
                 }
-                Node temp = cur;
+                ListNode temp = cur;
                 pre.next = temp.next;
                 temp.next = null;
             } else {
@@ -32,16 +34,4 @@ public class DeleteDuplicatedNode {
 
         return sp.next;
     }
-
-
-    static class Node {
-        int val;
-        Node next;
-
-        Node(int val) {
-            this.val = val;
-        }
-    }
-
-
 }

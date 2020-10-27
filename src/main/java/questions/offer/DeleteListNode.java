@@ -1,5 +1,7 @@
 package questions.offer;
 
+import questions.common.ListNode;
+
 /**
  *  题目18-1 删除链表的节点
  *
@@ -8,30 +10,21 @@ package questions.offer;
  */
 public class DeleteListNode {
 
-    public static Node deleteNode(Node head, Node target) {
+    public static ListNode deleteNode(ListNode head, ListNode target) {
         if (target.next != null) {
-            Node next = target.next;
-            target.val = next.val;
+            ListNode next = target.next;
+            target.value = next.value;
             target.next = next.next;
             next.next = null;
         } else if (target == head) {
             head = null;
         } else {
-            Node pre = head;
+            ListNode pre = head;
             while (pre.next != target) {
                 pre = pre.next;
             }
             pre.next = null;
         }
         return head;
-    }
-
-    static class Node {
-        int val;
-        Node next;
-
-        Node(int val) {
-            this.val = val;
-        }
     }
 }
