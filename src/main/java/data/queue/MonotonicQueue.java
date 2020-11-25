@@ -11,7 +11,7 @@ public class MonotonicQueue {
     private Deque<Integer> deque = new ArrayDeque<>();
 
     public void push(int item) {
-        //从队尾开始讲所以比该元素小的元素出队.
+        //从队尾开始讲所有比该元素小的元素出队.
         while (!deque.isEmpty() && deque.peekLast() < item) {
             deque.pollLast();
         }
