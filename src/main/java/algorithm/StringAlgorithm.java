@@ -78,4 +78,42 @@ public class StringAlgorithm {
         }
         return next;
     }
+
+    public static String longestCommonSubstring(String s, String t) {
+        if (s == null || t == null) {
+            return null;
+        }
+        int[][] lenDp = new int[s.length() + 1][t.length() + 1];
+        int[][] markDp = new int[s.length() + 1][t.length() + 1];
+
+        for (int i = 1; i < lenDp.length; i++) {
+            for (int j = 1; j < lenDp[0].length; j++) {
+                if (s.charAt(i - 1) == t.charAt(j - 1)) {
+                    lenDp[i][j] = lenDp[i - 1][j - 1] + 1;
+                    markDp[i][j] = 3;
+                } else if (lenDp[i - 1][j] >= lenDp[i][j - 1]) {
+                    lenDp[i][j] = lenDp[i - 1][j];
+                    markDp[i][j] = 2;
+                } else {
+                    lenDp[i][j] = lenDp[i][j - 1];
+                    markDp[i][j] = 1;
+                }
+            }
+        }
+        int i = lenDp.length - 1;
+        int j = lenDp[0].length - 1;
+        StringBuilder lcs = new StringBuilder();
+        while (i >= 0 && j >= 0) {
+            if (markDp[i][j] == 3) {
+                lcs.insert(0, s.charAt(i - 1));
+                i--;
+                j--;
+            } else if (markDp[i][j] == 2) {
+                i--;
+            } else {
+                j--;
+            }
+        }
+        return lcs.toString();
+    }
 }
