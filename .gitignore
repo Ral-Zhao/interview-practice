@@ -1,5 +1,6 @@
 # maven ignore
 target/
+temp.txt
 *.jar
 *.war
 *.swp
