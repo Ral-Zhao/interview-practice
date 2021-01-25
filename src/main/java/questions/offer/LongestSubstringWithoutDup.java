@@ -1,10 +1,10 @@
 package questions.offer;
 
 /**
- *  题目48 最长不含重复字符的子字符串
- *
- *  请从字符串中找出一个最长的不包含重复字符的子字符串，计算该最长子字符串的长度。
- *  假设字符串中只包含a~z的字符。
+ * 题目48 最长不含重复字符的子字符串
+ * <p>
+ * 请从字符串中找出一个最长的不包含重复字符的子字符串，计算该最长子字符串的长度。
+ * 假设字符串中只包含a~z的字符。
  */
 public class LongestSubstringWithoutDup {
     public static int length(String string) {
@@ -23,7 +23,7 @@ public class LongestSubstringWithoutDup {
         for (int i = 1; i < len; i++) {
             int charPos = string.charAt(i) - 'a';
             if (pos[charPos] == -1) {
-                dp[i] = dp[i - 1]+1;
+                dp[i] = dp[i - 1] + 1;
             } else {
                 int distance = i - pos[charPos];
                 if (distance > dp[i - 1]) {
