@@ -42,4 +42,19 @@ public class Path {
         }
         return path;
     }
+
+    private boolean findPath(List<TreeNode> list, TreeNode root, TreeNode target) {
+        list.add(root);
+        if (target == root) {
+            return true;
+        }
+        if (root.left != null && findPath(list, root.left, target)) {
+            return true;
+        }
+        if (root.right != null && findPath(list, root.right, target)) {
+            return true;
+        }
+        list.remove(list.size() - 1);
+        return false;
+    }
 }
