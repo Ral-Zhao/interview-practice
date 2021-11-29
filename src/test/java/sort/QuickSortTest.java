@@ -11,4 +11,13 @@ public class QuickSortTest {
             System.out.print(n + " ");
         }
     }
+
+    @Test
+    public void test2() {
+        int[] nums = new int[]{5, 1, 1, 2, 0, 0};
+        QuickSort.sort(nums);
+        for (int n : nums) {
+            System.out.print(n + " ");
+        }
+    }
 }
