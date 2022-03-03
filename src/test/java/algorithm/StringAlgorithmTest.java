@@ -17,8 +17,8 @@ public class StringAlgorithmTest {
 
     @Test
     public void testLongestCommonSubstring() {
-        Assert.assertEquals("abc", StringAlgorithm.longestCommonSubstring("adefbfeic", "51auilybc1n"));
-        Assert.assertEquals("abcn", StringAlgorithm.longestCommonSubstring("adefbfeicn", "51auilybc1n"));
-        Assert.assertEquals("bgh", StringAlgorithm.longestCommonSubstring("a1b2e5g6h", "5n57bjtg978+h87e"));
+        Assert.assertEquals("abc", StringAlgorithm.longestCommonSubSequence("adefbfeic", "51auilybc1n"));
+        Assert.assertEquals("abcn", StringAlgorithm.longestCommonSubSequence("adefbfeicn", "51auilybc1n"));
+        Assert.assertEquals("bgh", StringAlgorithm.longestCommonSubSequence("a1b2e5g6h", "5n57bjtg978+h87e"));
     }
 }

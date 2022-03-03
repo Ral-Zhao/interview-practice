@@ -117,22 +117,18 @@ public class TreeUtil {
             queue.add(root);
         }
         int limit = 1;
-        int count = 0;
         while (!queue.isEmpty()) {
             TreeNode node = queue.poll();
             limit--;
             System.out.print(node.value + " ");
             if (node.left != null) {
                 queue.add(node.left);
-                count++;
             }
             if (node.right != null) {
                 queue.add(node.right);
-                count++;
             }
             if (limit == 0) {
-                limit = count;
-                count = 0;
+                limit = queue.size();
                 System.out.println();
             }
         }

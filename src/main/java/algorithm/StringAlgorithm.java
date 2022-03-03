@@ -79,7 +79,7 @@ public class StringAlgorithm {
         return next;
     }
 
-    public static String longestCommonSubstring(String s, String t) {
+    public static String longestCommonSubSequence(String s, String t) {
         if (s == null || t == null) {
             return null;
         }
