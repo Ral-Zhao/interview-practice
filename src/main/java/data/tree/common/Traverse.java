@@ -96,6 +96,29 @@ public class Traverse {
         }
     }
 
+     //非递归实现后序遍历 简洁写法
+    public static void postOrder_simple(TreeNode root) {
+        Stack<TreeNode> stack = new Stack<>();
+        //用来记录已经被访问过的节点
+        TreeNode pre = null;
+        while (root!=null || !stack.isEmpty()){
+            while (root!=null){
+                stack.push(root);
+                root = root.left;
+            }
+            root = stack.peek();
+            //如果当前节点没有右子节点，或右子节点已经被访问过，则可以访问该节点
+            if (root.right == null || root.right == pre) {
+                System.out.println(root.value);
+                stack.pop();
+                pre=root;
+                root=null;
+            }else {
+                root = root.right;
+            }
+        }
+    }
+
     public static void levelOrder(TreeNode root) {
         Queue<TreeNode> queue = new ArrayDeque<TreeNode>();
         if (root != null) {

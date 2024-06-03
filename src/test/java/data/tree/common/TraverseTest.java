@@ -52,8 +52,12 @@ public class TraverseTest {
         TreeNode root = TreeUtil.buildTree();
         Traverse.postOrder(root);
         System.out.println("==============");
+        Traverse.postOrder_simple(root);
+        System.out.println("=====simple method========");
         root = TreeUtil.buildTree2();
         Traverse.postOrder(root);
+        System.out.println("=====simple method========");
+        Traverse.postOrder_simple(root);
 
     }
 
